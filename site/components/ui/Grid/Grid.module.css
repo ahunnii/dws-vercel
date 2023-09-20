@@ -24,7 +24,7 @@
 
   &.filled {
     & > *:nth-child(6n + 1) {
-      @apply bg-violet;
+      @apply bg-violet-500;
     }
 
     & > *:nth-child(6n + 2) {
@@ -32,11 +32,11 @@
     }
 
     & > *:nth-child(6n + 3) {
-      @apply bg-pink;
+      @apply bg-pink-500;
     }
 
     & > *:nth-child(6n + 6) {
-      @apply bg-cyan;
+      @apply bg-cyan-500;
     }
   }
 }
@@ -50,7 +50,7 @@
 
   &.filled {
     & > *:nth-child(6n + 1) {
-      @apply bg-violet;
+      @apply bg-violet-500;
     }
 
     & > *:nth-child(6n + 2) {
@@ -58,11 +58,11 @@
     }
 
     & > *:nth-child(6n + 3) {
-      @apply bg-pink;
+      @apply bg-pink-500;
     }
 
     & > *:nth-child(6n + 6) {
-      @apply bg-cyan;
+      @apply bg-cyan-500;
     }
   }
 }
@@ -76,17 +76,17 @@
 
   &.filled {
     & > *:nth-child(12n + 1) {
-      @apply bg-violet;
+      @apply bg-violet-500;
       height: var(--row-height);
     }
 
     & > *:nth-child(12n + 8) {
-      @apply bg-cyan;
+      @apply bg-cyan-500;
       height: var(--row-height);
     }
 
     & > *:nth-child(6n + 3) {
-      @apply bg-pink;
+      @apply bg-pink-500;
     }
   }
 }
@@ -100,15 +100,15 @@
 
   &.filled {
     & > *:nth-child(12n + 2) {
-      @apply bg-violet;
+      @apply bg-violet-500;
     }
 
     & > *:nth-child(12n + 7) {
-      @apply bg-cyan;
+      @apply bg-cyan-500;
     }
 
     & > *:nth-child(6n + 3) {
-      @apply bg-pink;
+      @apply bg-pink-500;
     }
   }
 }

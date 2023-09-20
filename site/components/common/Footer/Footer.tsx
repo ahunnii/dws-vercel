@@ -1,13 +1,13 @@
-import { FC } from 'react'
+import type { Page } from '@commerce/types/page'
+import { I18nWidget } from '@components/common'
+import { Github, Vercel } from '@components/icons'
+import { Container, Logo } from '@components/ui'
+import ThemeSwitcher from '@components/ui/ThemeSwitcher'
+import getSlug from '@lib/get-slug'
 import cn from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import type { Page } from '@commerce/types/page'
-import getSlug from '@lib/get-slug'
-import { Github, Vercel } from '@components/icons'
-import { Logo, Container } from '@components/ui'
-import { I18nWidget } from '@components/common'
-import ThemeSwitcher from '@components/ui/ThemeSwitcher'
+import { FC } from 'react'
 import s from './Footer.module.css'
 
 interface Props {
@@ -37,7 +37,7 @@ const Footer: FC<Props> = ({ className, pages }) => {
                 <span className="rounded-full border border-accent-6 mr-2">
                   <Logo />
                 </span>
-                <span>ACME</span>
+                <span>DreamWalker Studios</span>
               </a>
             </Link>
           </div>
@@ -70,22 +70,14 @@ const Footer: FC<Props> = ({ className, pages }) => {
         </div>
         <div className="pt-6 pb-10 flex flex-col md:flex-row justify-between items-center space-y-4 text-accent-6 text-sm">
           <div>
-            <span>&copy; 2020 ACME, Inc. All rights reserved.</span>
+            <span>
+              &copy; 2022 DreamWalker Studios Co. All rights reserved.
+            </span>
           </div>
           <div className="flex items-center text-primary text-sm">
-            <span className="text-primary">Created by</span>
-            <a
-              rel="noopener noreferrer"
-              href="https://vercel.com"
-              aria-label="Vercel.com Link"
-              target="_blank"
-              className="text-primary"
-            >
-              <Vercel
-                className="inline-block h-6 ml-3 text-primary"
-                alt="Vercel.com Logo"
-              />
-            </a>
+            <span className="text-primary">
+              Made with ❤️ and ☕ by Andrew Hunn
+            </span>
           </div>
         </div>
       </Container>

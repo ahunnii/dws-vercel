@@ -1,14 +1,14 @@
-import { ChangeEvent, FocusEventHandler, useEffect, useState } from 'react'
+import type { LineItem } from '@commerce/types/cart'
+import { useUI } from '@components/ui/context'
+import Quantity from '@components/ui/Quantity'
+import useRemoveItem from '@framework/cart/use-remove-item'
+import useUpdateItem from '@framework/cart/use-update-item'
+import usePrice from '@framework/product/use-price'
 import cn from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ChangeEvent, FocusEventHandler, useEffect, useState } from 'react'
 import s from './CartItem.module.css'
-import { useUI } from '@components/ui/context'
-import type { LineItem } from '@commerce/types/cart'
-import usePrice from '@framework/product/use-price'
-import useUpdateItem from '@framework/cart/use-update-item'
-import useRemoveItem from '@framework/cart/use-remove-item'
-import Quantity from '@components/ui/Quantity'
 
 type ItemOption = {
   name: string
@@ -84,7 +84,7 @@ const CartItem = ({
       {...rest}
     >
       <div className="flex flex-row space-x-4 py-4">
-        <div className="w-16 h-16 bg-violet relative overflow-hidden cursor-pointer z-0">
+        <div className="w-16 h-16 bg-violet-500 relative overflow-hidden cursor-pointer z-0">
           <Link href={`/product/${item.path}`}>
             <a>
               <Image

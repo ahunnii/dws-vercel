@@ -1,7 +1,7 @@
-import commerce from '@lib/api/commerce'
 import { Layout } from '@components/common'
 import { ProductCard } from '@components/product'
-import { Grid, Marquee, Hero } from '@components/ui'
+import { Grid, Hero, Marquee } from '@components/ui'
+import commerce from '@lib/api/commerce'
 // import HomeAllProductsGrid from '@components/common/HomeAllProductsGrid'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 
@@ -38,8 +38,15 @@ export async function getStaticProps({
 export default function Home({
   products,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const goToQuote = () => console.log('/quote')
   return (
     <>
+      {' '}
+      <Hero
+        headline="Infinite-ish
+        world of possibilities await"
+        description="We offer a ever changing line up of cool figures, statues, and random stuff all 3D printed, all with transparent pricing. Check back every month to see what we offer!"
+      />
       <Grid variant="filled">
         {products.slice(0, 3).map((product: any, i: number) => (
           <ProductCard
@@ -53,16 +60,25 @@ export default function Home({
           />
         ))}
       </Grid>
+      <section>
+        <div className=" py-30 mx-auto flex h-96 flex-col justify-center rounded-md bg-accent-1 px-5 text-center text-white">
+          <h2 className="mx-auto text-4xl font-bold text-accent-8">
+            Looking for something different? We do custom print jobs!
+          </h2>
+          <button
+            className="text-blue mx-auto mt-5 w-fit rounded-lg bg-blue-700 p-4 font-medium hover:bg-blue-800"
+            onClick={goToQuote}
+          >
+            Request a quote
+          </button>
+        </div>
+      </section>
       <Marquee variant="secondary">
         {products.slice(0, 3).map((product: any, i: number) => (
           <ProductCard key={product.id} product={product} variant="slim" />
         ))}
       </Marquee>
-      <Hero
-        headline=" Dessert dragée halvah croissant."
-        description="Cupcake ipsum dolor sit amet lemon drops pastry cotton candy. Sweet carrot cake macaroon bonbon croissant fruitcake jujubes macaroon oat cake. Soufflé bonbon caramels jelly beans. Tiramisu sweet roll cheesecake pie carrot cake. "
-      />
-      <Grid layout="B" variant="filled">
+      {/* <Grid layout="B" variant="filled">
         {products.slice(0, 3).map((product: any, i: number) => (
           <ProductCard
             key={product.id}
@@ -78,7 +94,7 @@ export default function Home({
         {products.slice(3).map((product: any, i: number) => (
           <ProductCard key={product.id} product={product} variant="slim" />
         ))}
-      </Marquee>
+      </Marquee> */}
       {/* <HomeAllProductsGrid
         newestProducts={products}
         categories={categories}
